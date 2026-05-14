@@ -6,7 +6,7 @@ import org.jetbrains.kotlin.ir.UNDEFINED_OFFSET
 import org.jetbrains.kotlin.ir.declarations.IrConstructor
 import org.jetbrains.kotlin.ir.declarations.IrEnumEntry
 import org.jetbrains.kotlin.ir.declarations.IrSimpleFunction
-import org.jetbrains.kotlin.ir.expressions.IrConstructorCall
+import org.jetbrains.kotlin.ir.expressions.IrAnnotation
 import org.jetbrains.kotlin.ir.expressions.impl.IrAnnotationImpl
 import org.jetbrains.kotlin.ir.expressions.impl.IrConstImpl
 import org.jetbrains.kotlin.ir.expressions.impl.IrGetEnumValueImpl
@@ -36,7 +36,7 @@ fun IrSimpleFunction.addDeprecatedHiddenAnnotation(context: IrPluginContext) {
  * Returns null if the Deprecated class cannot be resolved.
  */
 @OptIn(DeprecatedForRemovalCompilerApi::class)
-private fun buildDeprecatedHiddenAnnotation(context: IrPluginContext): IrConstructorCall? {
+private fun buildDeprecatedHiddenAnnotation(context: IrPluginContext): IrAnnotation? {
     // Resolve kotlin.Deprecated class
     val deprecatedClassSymbol = context.referenceClass(StandardClassIds.Annotations.Deprecated) ?: return null
     val deprecatedClass = deprecatedClassSymbol.owner

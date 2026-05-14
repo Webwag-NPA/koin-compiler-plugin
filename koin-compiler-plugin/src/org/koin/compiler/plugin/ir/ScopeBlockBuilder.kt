@@ -229,7 +229,7 @@ class ScopeBlockBuilder(
             type = scopeDsl.defaultType,
             isAssignable = false,
             symbol = IrValueParameterSymbolImpl(),
-            index = -1,
+            kind = org.jetbrains.kotlin.ir.declarations.IrParameterKind.ExtensionReceiver,
             varargElementType = null,
             isCrossinline = false,
             isNoinline = false,

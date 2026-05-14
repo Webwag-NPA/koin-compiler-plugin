@@ -213,7 +213,7 @@ class CallSiteValidator(private val context: IrPluginContext) {
                 type = targetClass.hintParameterType(context),
                 isAssignable = false,
                 symbol = IrValueParameterSymbolImpl(),
-                index = 0,
+                kind = org.jetbrains.kotlin.ir.declarations.IrParameterKind.Regular,
                 varargElementType = null,
                 isCrossinline = false,
                 isNoinline = false,

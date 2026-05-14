@@ -243,7 +243,7 @@ class InjectedParamHintGenerator(
                 type = paramType,
                 isAssignable = false,
                 symbol = IrValueParameterSymbolImpl(),
-                index = index,
+                kind = org.jetbrains.kotlin.ir.declarations.IrParameterKind.Regular,
                 varargElementType = null,
                 isCrossinline = false,
                 isNoinline = false,
